@@ -1,0 +1,86 @@
+body
+{
+  font-family: Ubuntu Mono;
+}
+
+.header
+{
+  text-align: center;
+  font-size: 40px;
+}
+
+.container
+{
+  background-color: #DDD;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.menu
+{
+  text-align: center;
+}
+
+.amenu
+{
+  font-size: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-left: 4px solid red;
+}
+
+.text
+{
+  border-top: 1px solid silver;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+a
+{
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a:visited, a:link, a:hover, a:active
+{
+  color: black;
+}
+
+.footer
+{
+  margin-top: 10px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.cell
+{
+  width: 50%;
+  background-color: #BBB;
+}
+
+.cellHeader
+{
+    background-color: #F33;
+    padding-left: 15px;
+}
+.cellText
+{
+  padding-bottom: 10px;
+  padding-left: 8px;
+}
+
+.linking
+{
+  border-top: 1px solid silver;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.art_img
+{
+  float: right;
+}
