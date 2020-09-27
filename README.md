@@ -1,0 +1,2 @@
+# naszegryn.github.io
+strona
