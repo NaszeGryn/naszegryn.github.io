@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> NaszeGry </title>
+    <link rel="font" href="files/UbuntuMono-Regular.ttf">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="files/icon.png">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1> NaszeGry </h1>
+        <hr/>
+      </div>
+
+      <div class="menu">
+        <a href="index.html" class="amenu" style="border: 0px;"> Strona główna</a>
+        <a href="gry.html" class="amenu"> Gry</a>
+        <a href="dokumentacje.html" class="amenu"> Dokumentacje</a>
+        <a href="https://github.com/NaszeGryn/gameLibrary" class="amenu" > Biblioteka</a>
+        <a href="https://github.com/NaszeGryn" class="amenu"> GitHub</a>
+      </div>
+
+      <div class="text">
+        <h2> Debug.h </h2>
+        <hr width="40%" align="left">
+        gL_log(x) - makro, pokazuje tekst i na końcu dodaje nową linie<br>
+        showV2f(sf::Vector2f a) - pokazuje sf::Vector2f<br>
+        a - sf::Vector2f, który ma być pokazany <br><br>
+
+        showColor(sf::Color a) - pokazuje sf::Color<br>
+        a - sf::Color, który ma być pokazany <br><br>
+
+        <h2> Math.h </h2>
+        <hr width="40%" align="left">
+        gL_MATH_NEWSEED() - makro, generuje nowe ziarno do generowania losowych liczb<br>
+        gL_MATH_PI - makro, przybliżenie liczbie pi<br>
+        gL_MATH_RADIAN - makro, przybliżenie radianu<br>
+
+        gL_V2FZERO - makro, punkt (0, 0)<br>
+        gL_V2IZERO - makro, punkt (0, 0)<br>
+        gL_V2UZERO - makro, punkt (0, 0)<br>
+
+        <h3> namespace Math </h3>
+        float dist(sf::Vector2f a, sf::Vector2f b) - zwraca dystans między dwoma punktami<br>
+        a - pierwszy punkt<br>
+        b - drugi punkt<br><br>
+
+        sf::Vector2f normVec(sf::Vector2f a, sf::Vector2f b) - zwraca znormalizowany wektor (maksymalna wartość to 1, a minimalna -1)<br>
+        a - pierwszy punkt<br>
+        b - drugi punkt<br><br>
+
+        float getAngle(sf::Vector2f start, sf::Vector2f nxt) - zwraca kąt linią o pozycji x pierwszego punktu i y drugiego, pierwszym punktem i drugim punktem<br>
+        start - pierwszy punkt<br>
+        nxt - drugi punkt<br><br>
+
+        float getTriangleArea(sf::Vector2f a, sf::Vector2f b, sf::Vector2f c) - zwraca pole trójkąta<br>
+        a - pierwszy punkt <br>
+        b - drugi punkt <br>
+        c - trzeci punkt <br><br>
+
+        sf::Vector2f v2fAbs(sf::Vector2f a) - zwraca absolutną wartość punktu<br>
+        a - wektor <br><br>
+
+        int randomI(int a, int b) - zwraca losową liczbe<br>
+        a - minimalna wartość<br>
+        b - maksymalna wartość <br><br>
+
+        float randomF(int a, int b) - zwraca losową liczbe<br>
+        a - minimalna wartość<br>
+        b - maksymalna wartość <br><br>
+
+        sf::Vector2f randomVecI(int xmin, int xmax, int ymin, int ymax) - zwraca losowy wektor<br>
+        xmin - minimalna wartość x<br>
+        xmin - maksymalna wartość x<br>
+        ymin - minimalna wartość y<br>
+        ymin - maksymalna wartość y<br><br>
+
+        sf::Vector2f randomVecF(int xmin, int xmax, int ymin, int ymax) - zwraca losowy wektor<br>
+        xmin - minimalna wartość x<br>
+        xmin - maksymalna wartość x<br>
+        ymin - minimalna wartość y<br>
+        ymin - maksymalna wartość y<br><br>
+
+        char getRandomChar() - zwraca losowy znak (liczba lub litera)<br><br>
+
+        std::string getRandomString(uint32_t length) - zwraca napis stworzony z losowych znaków<br>
+        length - długość napisu <br><br>
+
+        std::string getV2fStr(sf::Vector2f a) - zwraca napis stworzony z wektora<br>
+        a - wektor <br><br>
+
+        sf::Vector2f avgV2f(sf::Vector2f first, sf::Vector2f second) - zwraca średnią z dwóch punktów <br>
+        first - pierwszy wektor <br>
+        second - drugi wektor <br><br>
+
+        sf::Color avgColor(sf::Color a, sf::Color b) - zwraca średnią wartość z dwóch kolorów<br>
+        a - pierwszy kolor <br>
+        b - drugi kolor <br><br>
+
+        sf::Vector2f rotateArZero(sf::Vector2f point, float angle) - obraca dookoła punktu (0, 0)<br>
+        point - punkt<br>
+        angle - kąt<br><br>
+
+        float averageF(std::vector&#60;float&#62;&#42; list) - wylicza średnią z listy floatów <br>
+        list - wskaźnik do listy <br><br>
+
+        float averageI(std::vector&#60;int&#62;&#42; list) - wylicza średnią z listy intów <br>
+        list - wskaźnik do listy <br><br>
+
+        float averageU(std::vector&#60;unsigned int&#62;&#42; list) - wylicza średnią z listy uintów <br>
+        list - wskaźnik do listy <br><br>
+
+        sf::Color strHexToColor(const std::string& hexNum) - zamienia szesnastkowy kolor na sf::Color<br>
+        hexNum - szesnastkowy kolor (NIE MOŻE SIĘ ZACZYNAĆ OD "#")<br><br>
+
+        sf::Vector2f strToVec2f(const std::string& line) - zamienia string na sf::Vector2f<br>
+        line - wektor jako string<br><br>
+
+        std::string vec2fToStr(sf::Vector2f vector) - zamienia wektor na string (kompatybilne z strToVec2f())<br>
+        vector - wektor<br><br>
+
+        std::string intToHexStr(unsigned int a, uint16_t min_length = 0) - zamienia uinta na liczbę szesnastkową<br>
+        a - liczba<br>
+        min_length - minimalna długość wyniku <br><br>
+
+        int hexStrToUInt(const std::string& number) - zamienia liczbę szesnastkową na uinta <br>
+        number - liczba <br><br>
+
+        std::string colToStr(sf::Color color) - zamienia kolor na szesnastkowy kolor<br>
+        color - kolor<br><br>
+
+        class ColorF - kolor stworzony z floatów<br>
+        check() - sprawdza czy wartości nie są mniejsze niż 0 lub większe niż 255 <br>
+        sf::Color getColor() - zamienia ColorF na sf::Color<br>
+        add(ColorF x) - dodaje wartości drugiego koloru<br>
+        x - drugi kolor <br>
+        subtract(ColorF x) - odejmuje wartości drugiego koloru<br>
+        x - drugi kolor <br>
+        multiply(ColorF x) - mnoży przez wartości drugiego koloru<br>
+        x - drugi kolor <br><br>
+
+        class Counter - licznik <br>
+        Counter(int maxValue = 1) - konstruktor<br>
+        maxValue - maksymalna wartość <br>
+        bool Update(int value, bool restart = true) - zwraca <b>true</b> jeśli osiągnie maksymalną wartość<br>
+        value - wartość, która ma być dodana<br>
+        restart - czy ma restartować, jeśli osiągnie maksymalną wartość<br><br>
+
+        <h3> namespace Time </h3>
+        class Clock - zegar (np do liczenia czasu jednej klatki)<br>
+        void Update() - aktualizuje deltaTime<br>
+
+        deltaTime - różnica czasu między update'ami <br><br>
+
+        class Timer - stoper<br>
+        bool Update(float deltaTime, bool restart = true)<br>
+        deltaTime - różnica czasu między klatkami<br>
+        restart - czy ma restartować, jeśli osiągnie maksymalną wartość<br>
+        bool CUpdate(Time::Clock& clock, bool restart = true)<br>
+        clock - zegar<br>
+        restart - czy ma restartować, jeśli osiągnie maksymalną wartość<br><br>
+
+        <h3> namespace Logic </h3>
+        bool XOR(bool a, bool b) - bramka XOR<br>
+        bool XNOR(bool a, bool b) - bramka XNOR<br>
+
+        <h2> Network.h </h2>
+        <hr width="40%" align="left">
+        gL_IP(a, b, c, d) - tworzy adres IPv4 z podanych wartości<br>
+        gL_cIP(str) - tworzy adres IPv4 ze stringa<br>
+
+        <h2> Audio.h </h2>
+        <hr width="40%" align="left">
+        <h3> WYMAGA openal32.dll </h3>
+        <h3> namespace Audio </h3>
+        sf::SoundBuffer getBuffer(const std::string& location) - ładuje plik audio z pliku<br>
+        class Sound - dźwięk (sf::SoundBuffer i sf::Sound w jednym)<br>
+        Sound(const std::string& filename, float volume, bool loop) - konstruktor <br>
+        filename - lokalizacja pliku audio<br>
+        volume - głośność <br>
+        loop - powtarzanie<br>
+
+        Sound(sf::SoundBuffer* buffer, float volume, bool loop) - konstruktor <br>
+        buffer - wskaźnik do sf::SoundBuffer<br>
+        volume - głośność <br>
+        loop - powtarzanie<br>
+
+        setVolume(float volume) - ustawia głośność<br>
+        volume - głośność <br>
+        play() - zaczyna grać<br>
+        stop() - zatrzymuje granie<br>
+        sf::Sound* getSound() - zwraca wskaźnik do sf::Sound<br>
+        sf::SoundBuffer* getBuffer() - zwraca wskaźnik do sf::SoundBuffer<br>
+
+        <h2> Collisions.h </h2>
+        <hr width="40%" align="left">
+        <h3> namespace Collisions </h3>
+        struct CLine - linia (dwa sf::Vector2f)<br>
+        enum class ColliderType - typ collidera<br>
+        Poly - poligon<br>
+        Circle - koło<br><br>
+
+        class Collider - wirtualna klasa dla colliderów<br><br>
+
+        class Poly - collider typu poligon (nie działa z kątami wklęsłymi)<br>
+        Poly(std::vector&#60;sf::Vector2f&#62;&amp; vectorList) - konstruktor<br>
+        vectorList - lista punktów<br>
+        Poly(sf::VertexArray& vectorList) - konstruktor<br>
+        vectorList - lista punktów<br>
+        Poly(sf::RectangleShape& shape) - konstruktor<br>
+        shape - prostokąt<br>
+        add(sf::Vector2f a) - dodaje nowy punkt do listy<br>
+        void Update(sf::RectangleShape& shape) - aktualizuje poligon na podstawie prostokąta<br>
+        shape - prostokąt<br>
+        Update(sf::VertexArray& vectorList) - aktualizuje poligon na podstawie listy punktów<br>
+        vectorList - lista punktów<br>
+        Update(std::vector&#60;sf::Vector2f&#62;&amp; vectorList) - aktualizuje poligon na podstawie listy punktów<br>
+        vectorList - lista punktów<br>
+        std::vector&#60;sf::Vector2f&#62;* getPoly() - zwraca wskaźnik do poligonu<br>
+        float getRadius() - zawsze zwraca 0.f<br>
+        sf::Vector2f getPos() - zawsze zwraca punkt (0, 0)<br>
+        ColliderType getType() - zawsze zwraca ColliderType::Poly<br><br>
+
+        class Circle - collider typu koło<br>
+        Circle(float radius, sf::Vector2f pos) - konstruktor<br>
+        radius - promień koła <br>
+        pos - pozycja środka koła<br>
+        Circle(sf::CircleShape* shape) - konstruktor<br>
+        shape - wskaźnik do koła (origin musi być na środku koła)<br>
+
+        Update(sf::CircleShape* shape) - aktualizuje collider na podstawie koła<br>
+        shape - wskaźnik do koła (origin musi być na środku koła)<br>
+
+        std::vector&#60;sf::Vector2f&#62;* getPoly() - zwraca kwadrat stworzony na podstawie koła<br>
+        float getRadius() - zwraca promień koła<br>
+        sf::Vector2f getPos() - zwraca centrum koła<br>
+        ColliderType getType() - zawsze zwraca Collider::Circle<br><br>
+
+        bool collide(Collider* a, Collider* b) - sprawdza czy collidery się zderzają<br>
+        a - wskaźnik do pierwszego collidera<br>
+        b - wskaźnik do drugiego collidera<br>
+
+        <h2> Graphics.h </h2>
+        <hr width="40%" align="left">
+        gL_rgb(r, g, b) - makro, tworzy kolor na podstawie danych<br>
+        gL_rgba(r, g, b, a) - makro, tworzy kolor na podstawie danych<br>
+        gL_fullScreen - makro, zwraca sf::VideoMode o maksymalnej wspieranej rozdzielczości<br>
+        gL_fullScreenSize - makro, zwraca sf::Vector2f o maksymalnej wspieranej rozdzielczości<br><br>
+
+        <h2> GraphicsClasses.h </h2>
+        <hr width="40%" align="left">
+        <h3> namespace Draw </h3>
+        class SpriteAnimator - przejmuje kontrole nad animacjami sf::Sprite<br>
+        SpriteAnimator(sf::Sprite* sprite, float AnimInterval, sf::Vector2i frameSize, int anim) - konstruktor<br>
+        sprite - wskaźnik do sf::Sprite<br>
+        AnimInterval - czas między klatkami<br>
+        frameSize - rozmiar klatki <br>
+        anim - która animacja (pozycja y)<br>
+
+        void changeAnim(int anim) - zmienia animacje (pozycje Y)<br>
+        anim - numer animacji<br>
+        void setMaxAnim(int maxAnim) - zmiana maksymalnej ilość klatek w rzędzie<br>
+        maxAnim - maksymalna ilość animacji w rzędzie
+        void Update(float deltaTime) - aktualizuje animacje<br>
+        deltaTime - czas między klatkami<br><br>
+
+        enum class GradientType - typy gradientu<br>
+        LeftToRight - od lewej do prawej<br>
+		    TopToBottom - od góry do dołu<br>
+		    TopLeftToBottomRight - od lewego górnego rogu do prawego dolnego<br>
+  		  TopRightToBottomLeft - od prawego górnego rogu do lewego dolnego<br>
+		    TopLeft - tylko lewy górny róg ma drugi kolor<br>
+		    TopRight - tylko prawy górny róg ma drugi kolor<br>
+		    BottomLeft - tylko lewy dolny róg ma drugi kolor<br>
+        BottomRight - tylko prawy dolny róg ma drugi kolor<br><br>
+
+        class GradientRect - prostokąt z gradientem<br>
+        GradientRect(sf::FloatRect pas, GradientType type, sf::Color colorA, sf::Color colorB) - konstruktor<br>
+        pas - prostokąt<br>
+        type - typ gradientu<br>
+        colorA - pierwszy kolor<br>
+        colorB - drugi kolor<br>
+
+        Draw(sf::RenderWindow* window) - rysuje prostokąt na ekranie<br>
+        window - wskaźnik do okna <br>
+
+        sf::VertexArray* getArray() - zwraca wskaźnik do listy punktów<br><br>
+
+        class Line - linia<br>
+        Line(sf::Vector2f a, sf::Vector2f b, sf::Color color) - konstruktor<br>
+        a - pierwszy punkt<br>
+        b - drugi punkt<br>
+        color - kolor linii<br>
+        Draw(sf::RenderWindow* window) - rysuje linie na ekranie<br>
+        window - wskaźnik do okna<br>
+        sf::VertexArray* getArray() - zwraca wskaźnik do listy punktów<br>
+
+        class Point - punkt (stworzony z koła)<br>
+        Point(sf::Vector2f position, float size, sf::Color color) - konstruktor<br>
+        position - pozycja<br>
+        size - rozmiar<br>
+        color - kolor<br>
+        Draw(sf::RenderWindow* window) - rysuje punkt na ekranie<br>
+        window - wskaźnik do okna<br>
+        sf::CircleShape* getShape() - zwraca wskaźnik do koła<br><br>
+
+        <h2> GraphicsFunctions.h </h2>
+        <hr width="40%" align="left">
+        <h3> namespace GraphFunc </h3>
+        DrawText(sf::Vector2f pos, const std::string& textf, sf::Font* font, unsigned int fontSize, sf::RenderTarget* window) - rysuje tekst na ekranie<br>
+        pos - pozycja<br>
+        textf - tekst<br>
+        font - wskaźnik do czcionki<br>
+        fontSize - rozmiar czcionki<br>
+        window - miejsce, na którym ma być narysowany<br>
+
+        sf::Text getText(const std::string& textf, sf::Font* font, unsigned int fontSize, sf::Vector2f pos = sf::Vector2f(0.f, 0.f)) - zwraca tekst <br>
+        textf - tekst<br>
+        font - wskaźnik do czcionki<br>
+        fontSize - rozmiar czcionki<br>
+        pos - pozycja<br>
+
+        getText(sf::Text* ptr, const std::string& textf, sf::Font* font, unsigned int fontSize, sf::Vector2f pos = sf::Vector2f(0.f, 0.f)) - zapisuje tekst do wskaźnika <br>
+        ptr - wskaźnik do zmiennej, gdzie ma być zapisany<br>
+        textf - tekst<br>
+        fontSize - rozmiar czcionki<br>
+        pos - pozycja<br>
+
+        changeVerArrColor(sf::VertexArray* array, sf::Color color) - zmienia kolor listy punktów<br>
+        array - wskaźnik do listy punktów<br>
+        color - kolor<br>
+
+        sf::Texture loadHQTexture(const std::string& location) - wczytuje teksture z pliku<br>
+        location - lokalizacja<br>
+
+        bool loadHQTexture(sf::Texture* ptr, const std::string& location) - zapisuje teksture do zmiennej<br>
+        ptr - wskaźnik do zmiennej<br>
+        location - lokalizacja<br>
+
+        sf::Font loadFont(const std::string& location) - wszytuje czcionke z pliku<br>
+        location - lokalizacja<br>
+
+        bool loadFont(sf::Font* ptr, const std::string& location) - zapisuje czcionke do zmiennej<br>
+        ptr - wskaźnik do zmiennej<br>
+        location - lokalizacja<br>
+
+        do_ScreenShot(sf::RenderWindow* window, const std::string& location) - tworzy i zapisuje zrzut ekranu<br>
+        window - wskaźnik do okna<br>
+        location - lokalizacja pliku (dodaje do tego czas stworzenia screenshota)<br>
+
+        scaleTexture(sf::Sprite* texture, sf::Vector2f size) - skaluje teksture do danego rozmiaru<br>
+        texture - wskaźnik do tekstury<br>
+        size - rozmiar<br>
+
+        sf::Sprite scaleTextureR(sf::Sprite* texture, sf::Vector2f size) - skaluje teksture do danego rozmiaru i zwraca kopie<br>
+        texture - wskaźnik do tekstury<br>
+        size - rozmiar<br>
+
+        <h2> GraphicsProcessing.h </h2>
+        <hr width="40%" align="left">
+        <h3> namespace Processing  </h3>
+        sf::Texture getNegative(sf::Texture texture) - zwraca teksture w negatywie<br>
+        texture - tekstura<br>
+        sf::Texture multiply(sf::Texture texture, float val) - mnoży kolory przez wartość <br>
+        texture - tekstura<br>
+        val - wartość przez którą mają być przemnożone<br>
+
+        <h2> Particles.h </h2>
+        <hr width="40%" align="left">
+        <h3> namespace Particles  </h3>
+
+        class Particle - cząsteczka<br>
+        Particle(float size, sf::Vector2f& move, sf::Vector2f& pos, float alpha_change, sf::Color& color) - konstruktor<br>
+        size - rozmiar<br>
+        move - kierunek ruchu<br>
+        pos - pozycja startowa<br>
+        alpha_change - zmiana alphy<br>
+        color - kolor<br>
+
+        set(sf::Vector2f& move, sf::Vector2f& pos) - zmiana kierunku ruchu i pozycji<br>
+        move - kierunek ruchu<br>
+        pos - pozycja startowa<br>
+
+        update(float dtime) - aktualizacja cząsteczki<br>
+        dtime - czas między klatkami<br>
+
+        draw(sf::RenderTarget* target) - rysuje<br>
+        target - wskaźnik do celu rysowania<br>
+
+        bool finished() - zwraca, czy alfa spadła poniżej 10<br>
+        sf::Vector2f getPos() - zwraca aktualną pozycje<br>
+
+        <h2> GUI.h </h2>
+        <hr width="40%" align="left">
+        <h3> namespace GUI  </h3>
+        enum class Event - eventy elementów gui<br>
+        None - brak eventów<br>
+        Clicked - kliknięty<br>
+        NewVal - nowa wartość<br><br>
+
+        enum class ElementType - typ elementu gui<br>
+        null - brak<br>
+        Button - przycisk<br>
+        TextureButton - przycisk z tłem jako teksturą<br>
+        TextBox - tekst<br>
+        TextureBox - tekstura<br>
+        Slider - przesuwak<br>
+        InputBox - miejsce do wpisania tekstu<br>
+        TFBox - checkbox<br>
+        BSBox - wybór opcji<br><br>
+
+
+        <a name="gelem">GUIElement</a> - klasa wirtualna<br>
+        Draw(sf::RenderTarget* window) - rysuje <br>
+		    Update(float deltaTime, sf::RenderWindow* window) - aktualizuje na podstawie czasu klatki<br>
+		    EventUpdate(sf::Event event) - aktualizuje na podstawie eventu<br>
+		    Event getEvent() - zwraca event<br>
+		    ElementType getType() - zwraca typ elementu<br>
+		    int getValue() - zwraca wartość (przesuwak, checkbox)<br>
+		    std::string getIBValue() - zwraca zawartość InputBox'a<br>
+
+		    sf::Vector2f maxRD() - prawy dolny róg<br>
+		    sf::Vector2f minRD() - lewy górny róg<br>
+		    std::string getID() - zwraca ID elementu <br><br>
+
+
+        Button(sf::Vector2f pos, sf::Vector2f size, sf::Text* text, sf::Color color, const std::string& ID = "") - konstruktor<br>
+        pos - pozycja przycisku<br>
+        size - rozmiar przycisku<br>
+        text - wskaźnik do tekstu, który będzie w środku przycisku<br>
+        color - kolor <br>
+        ID - identyfikator <br>
+        <a href="#gelem" style="font-size: 14px;">INNE FUNKCJE</a><br><br>
+
+        TextureButton(sf::Vector2f pos, sf::Texture& texture, const std::string& ID = "")<br>
+		    TextureButton(sf::Vector2f pos, sf::Texture& texture, sf::IntRect rect, const std::string& ID = "")<br>
+        pos - pozycja przycisku<br>
+        texture - tekstura<br>
+        rect - część tekstury, która ma być pokazywana <br>
+        ID - identyfikator <br>
+        <a href="#gelem" style="font-size: 14px;">INNE FUNKCJE</a><br><br>
+
+        TextBox(sf::Vector2f pos, sf::Vector2f size, sf::Text* text, sf::Color color, const std::string& ID = "") - konstruktor<br>
+        pos - pozycja przycisku<br>
+        text - wskaźnik do tekstu, który ma być pokazywany<br>
+        color - kolor <br>
+        ID - identyfikator <br>
+        <a href="#gelem" style="font-size: 14px;">INNE FUNKCJE</a><br><br>
+
+        TextureBox(sf::Vector2f pos, sf::Texture* texture, const std::string& ID = "")<br>
+        TextureBox(sf::Vector2f pos, sf::Texture* texture, sf::IntRect rect, const std::string& ID = "")<br>
+        pos - pozycja przycisku<br>
+        texture - wskaźnik do tekstury, który ma być pokazywany<br>
+        rect - część tekstury, która ma być pokazywana <br>
+        ID - identyfikator <br>
+        <a href="#gelem" style="font-size: 14px;">INNE FUNKCJE</a><br><br>
+
+        Slider(sf::Vector2f pos, float size, float length, sf::Color color, int starting_Val = 50, const std::string& ID = "") - konstruktor<br>
+        pos - pozycja przycisku<br>
+        size - rozmiar<br>
+        length - długość <br>
+        color - kolor <br>
+        starting_Val - wartość początkowa<br>
+        ID - identyfikator <br>
+        <a href="#gelem" style="font-size: 14px;">INNE FUNKCJE</a><br><br>
+
+        InputBox(sf::Vector2f pos, sf::Vector2f size, int charSize, sf::Color color, sf::Font* font, const std::string& ID = "", const std::string& def_text = "") - konstruktor<br>
+        pos - pozycja przycisku<br>
+        size - rozmiar<br>
+        charSize - rozmiar czcionki <br>
+        font - wskaźnik do czcionki <br>
+        ID - identyfikator <br>
+        def_text - wartość początkowa<br>
+        <a href="#gelem" style="font-size: 14px;">INNE FUNKCJE</a><br><br>
+
+        TFBox(sf::Vector2f pos, float size, sf::Color TrueColor, sf::Color FalseColor = sf::Color::Black, bool def_Val = false, const std::string& ID = "") - konstruktor<br>
+        pos - pozycja przycisku<br>
+        size - rozmiar<br>
+        TrueColor - kolor, jeśli wartość to <b>true</b> <br>
+        FalseColor - kolor, jeśli wartość to <b>false</b> <br>
+        def_Val - wartość początkowa<br>
+        ID - identyfikator <br>
+        <a href="#gelem" style="font-size: 14px;">INNE FUNKCJE</a><br><br>
+
+        BSBox(sf::Vector2f pos, float size, sf::Color color, sf::Color TextColor, std::vector&#60;std::string&#62;&amp; strings, sf::Font* font, int charsize = 20, int def_Val = 0, const std::string& ID = "") - konstruktor<br>
+        pos - pozycja przycisku<br>
+        size - rozmiar<br>
+        color - kolor <br>
+        TextColor - kolor, jeśli wartość to <b>false</b> <br>
+        strings - opcje <br>
+        font - wskaźnik do czcionki <br>
+        charsize - rozmiar czcionki<br>
+        def_Val - wartość początkowa<br>
+        ID - identyfikator <br>
+        <a href="#gelem" style="font-size: 14px;">INNE FUNKCJE</a><br><br>
+
+        GUIHandler(sf::Vector2f pos, int margin, sf::Color color)<br>
+        pos - pozycja<br>
+        margin - margines <br>
+        color - kolor<br>
+
+        add_GUI_ELEMENT(GUIElement* element) - dodaje element do listy<br>
+        element - wskaźnik do elementu, który ma być dodany
+		    std::vector&#60;GUIElement*&#62;* getArray() - zwraca wskaźnik do listy elementów<br>
+
+        Draw(sf::RenderTarget* target) - rysowanie elementów<br>
+        target - cel<br>
+		    Update(float deltaTime, sf::RenderWindow* window) - aktualizacja elementów<br>
+        deltaTime - czas między klatkami<br>
+        window - okno<br>
+	      EventUpdate(sf::Event event) - aktualizacja<br>
+        event - event<br>
+
+        size_t getArraySize() - zwraca rozmiar listy elementów<br>
+
+        Event getEvent(int index);
+		    ElementType getElementType(int index);
+		    int getValue(int index);
+		    std::string getIBValue(int index);
+
+		    Event getEvent(const std::string& ID);
+		    ElementType getElementType(const std::string& ID);
+		    int getValue(const std::string& ID);
+		    std::string getIBValue(const std::string& ID);
+
+	      int getIndex(const std::string& ID);
+	      std::string getID(int index);
+
+        <div class="linking">
+          <a href="https://www.youtube.com/channel/UCf33DqLlIob7he9bJxsoKzw">
+             <img src="files/yt.png" alt="Kanał YT" width="100px"/>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <hr>
+        NaszeGry
+        <br/>
+        Font-Ubuntu Mono
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> NaszeGry </title>
+    <link rel="font" href="files/UbuntuMono-Regular.ttf">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="files/icon.png">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1> NaszeGry </h1>
+        <hr/>
+      </div>
+
+      <div class="menu">
+        <a href="index.html" class="amenu" style="border: 0px;"> Strona główna</a>
+        <a href="gry.html" class="amenu"> Gry</a>
+        <a href="dokumentacje.html" class="amenu"> Dokumentacje</a>
+        <a href="https://github.com/NaszeGryn/gameLibrary" class="amenu" > Biblioteka</a>
+        <a href="https://github.com/NaszeGryn" class="amenu"> GitHub</a>
+      </div>
+
+      <div class="text">
+        <h2> Dokumentacja Variable Language </h2>
+        <h3> Klasy, struktury i funkcje </h3>
+        struct VL_Variable - zmienna variableLanguage<br>
+        std::string title - nazwa zmiennej<br>
+        std::string value - zawartość zmiennej<br>
+
+        <hr width="20%" align="left">
+
+        class VL_File - plik variableLanguage<br>
+        VL_file(const std::string& VL_S_Location) - konstruktor<br>
+        VL_S_Location - lokalizacja pliku<br><br>
+
+        load(const std::string& VL_S_Location) - ładuje zmienne z pliku <br>
+        VL_S_Location - lokalizacja pliku<br><br>
+
+        getValue(const std::string& name) - zwraca wartość zmiennej o danej nazwie<br>
+        name - nazwa zmiennej, jeśli nie istnieje taka zmienna zwraca "" <br>
+        getValue(int index) - zwraca wartość zmiennej na danym miejscu w liście<br>
+        index - numer zmiennej w liście<br>
+        getIndex(const std::string& name) - zwraca miejsce zmiennej w liście<br>
+        name - nazwa zmiennej
+        <hr width="20%" align="left">
+        combine(std::vector&#60VL_variable&#62* V_list, VL_file* file) - dodaje zmienne ze zmiennej typu VL_file do listy<br>
+        V_list - lista zmiennych<br>
+        file - plik
+        <hr width="20%" align="left">
+        class VL_Handler - lista zmiennych z dodatkowymi funkcjami<br>
+        addFromFile(const std::string& VL_S_Location) - dodaje zmienne z pliku<br>
+        VL_S_Location - lokalizacja pliku<br>
+        add(VL_variable* variable) - dodaje zmienną<br>
+        variable - wskaźnik do zmiennej<br>
+        getValue(const std::string& name) - zwraca wartość zmiennej o danej nazwie<br>
+        name - nazwa zmiennej, jeśli nie istnieje taka zmienna zwraca "" <br>
+        getValue(int index) - zwraca wartość zmiennej na danym miejscu w liście<br>
+        index - numer zmiennej w liście<br>
+        getIndex(const std::string& name) - zwraca miejsce zmiennej w liście<br>
+        name - nazwa zmiennej
+        <hr width="20%" align="left">
+        <h3> Korzystanie z Variable Language </h3>
+        <h4> Tworzenie zmiennej</h4>
+        &#60nazwa zmiennej&#62 = &#60wartość&#62
+
+        <h4> Deklaracja zmiennej bez wartości</h4>
+        &#60nazwa zmiennej&#62
+
+        <h4> Wartości zajmujące wiele linijek</h4>
+        /&#60wartość&#62 - dodające " ", a później wartość<br>
+        &amp&#60wartość&#62 - dodające nową linie, a później wartość
+
+        <div class="linking">
+          <a href="https://www.youtube.com/channel/UCf33DqLlIob7he9bJxsoKzw">
+             <img src="files/yt.png" alt="Kanał YT" width="100px"/>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <hr>
+        NaszeGry
+        <br/>
+        Font-Ubuntu Mono
+      </div>
+    </div>
+  </body>
+</html>
