@@ -43,9 +43,15 @@
         getValue(int index) - zwraca wartość zmiennej na danym miejscu w liście<br>
         index - numer zmiennej w liście<br>
         getIndex(const std::string& name) - zwraca miejsce zmiennej w liście<br>
+        name - nazwa zmiennej<br>
+        VL_variable* getVariable(int index) - zwraca wskaźnik do zmiennej<br>
+		    VL_variable* getVariable(const std::string& name) - zwraca wskaźnik do zmiennej<br>
+        index - numer zmiennej w liście<br>
         name - nazwa zmiennej
         <hr width="20%" align="left">
-        combine(std::vector&#60VL_variable&#62* V_list, VL_file* file) - dodaje zmienne ze zmiennej typu VL_file do listy<br>
+        combine(std::vector&#60;VL_variable&#62;* V_list, VL_file* file) - dodaje zmienne ze zmiennej typu VL_file do listy<br>
+        saveToFile(VL_Handler& file, const std::string& filename, bool clear_file = true) - zapisuje zmienne do pliku<br>
+        saveToFile(VL_File& file, const std::string& filename, bool clear_file = true) - zapisuje zmienne do pliku<br>
         V_list - lista zmiennych<br>
         file - plik
         <hr width="20%" align="left">
@@ -59,18 +65,22 @@
         getValue(int index) - zwraca wartość zmiennej na danym miejscu w liście<br>
         index - numer zmiennej w liście<br>
         getIndex(const std::string& name) - zwraca miejsce zmiennej w liście<br>
+        name - nazwa zmiennej<br>
+        VL_variable* getVariable(int index) - zwraca wskaźnik do zmiennej<br>
+		    VL_variable* getVariable(const std::string& name) - zwraca wskaźnik do zmiennej<br>
+        index - numer zmiennej w liście<br>
         name - nazwa zmiennej
         <hr width="20%" align="left">
         <h3> Korzystanie z Variable Language </h3>
         <h4> Tworzenie zmiennej</h4>
-        &#60nazwa zmiennej&#62 = &#60wartość&#62
+        &#60;nazwa zmiennej&#62;=&#60;wartość&#62;
 
         <h4> Deklaracja zmiennej bez wartości</h4>
-        &#60nazwa zmiennej&#62
+        &#60;nazwa zmiennej&#62;
 
         <h4> Wartości zajmujące wiele linijek</h4>
-        /&#60wartość&#62 - dodające " ", a później wartość<br>
-        &amp&#60wartość&#62 - dodające nową linie, a później wartość
+        /&#60;wartość&#62; - dodające " ", a później wartość<br>
+        &amp&#60;wartość&#62; - dodające nową linie, a później wartość
 
         <div class="linking">
           <a href="https://www.youtube.com/channel/UCf33DqLlIob7he9bJxsoKzw">
