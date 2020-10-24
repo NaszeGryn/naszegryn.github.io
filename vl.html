@@ -50,10 +50,14 @@
         name - nazwa zmiennej
         <hr width="20%" align="left">
         combine(std::vector&#60;VL_variable&#62;* V_list, VL_file* file) - dodaje zmienne ze zmiennej typu VL_file do listy<br>
-        saveToFile(VL_Handler& file, const std::string& filename, bool clear_file = true) - zapisuje zmienne do pliku<br>
-        saveToFile(VL_File& file, const std::string& filename, bool clear_file = true) - zapisuje zmienne do pliku<br>
         V_list - lista zmiennych<br>
         file - plik
+
+        saveToFile(VL_Handler& file, const std::string& filename, bool clear_file = true) - zapisuje zmienne do pliku<br>
+        saveToFile(VL_File& file, const std::string& filename, bool clear_file = true) - zapisuje zmienne do pliku<br>
+        file - plik lub VL_Handler<br>
+        filename - plik docelowy<br>
+        clear_file - czy ma wyczyścić plik<br>
         <hr width="20%" align="left">
         class VL_Handler - lista zmiennych z dodatkowymi funkcjami<br>
         addFromFile(const std::string& VL_S_Location) - dodaje zmienne z pliku<br>
