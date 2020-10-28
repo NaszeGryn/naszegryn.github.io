@@ -32,12 +32,15 @@
         <hr width="20%" align="left">
 
         class VL_File - plik variableLanguage<br>
-        VL_file(const std::string& VL_S_Location) - konstruktor<br>
+        VL_file(const std::string& VL_S_Location, const std::string& Name = "") - konstruktor<br>
+        Name - nazwa, jeśli jest zostawione "", to nazwą będzie nazwa pliku<br>
         VL_S_Location - lokalizacja pliku<br><br>
 
-        load(const std::string& VL_S_Location) - ładuje zmienne z pliku <br>
+        load(const std::string& VL_S_Location, const std::string& Name = "") - ładuje zmienne z pliku <br>
+        Name - nazwa, jeśli jest zostawione "", to nazwą będzie nazwa pliku<br>
         VL_S_Location - lokalizacja pliku<br><br>
 
+        getFilename() - zwraca nazwę pliku aktualnie wczytanego<br>
         getValue(const std::string& name) - zwraca wartość zmiennej o danej nazwie<br>
         name - nazwa zmiennej, jeśli nie istnieje taka zmienna zwraca "" <br>
         getValue(int index) - zwraca wartość zmiennej na danym miejscu w liście<br>
@@ -47,11 +50,12 @@
         VL_variable* getVariable(int index) - zwraca wskaźnik do zmiennej<br>
 		    VL_variable* getVariable(const std::string& name) - zwraca wskaźnik do zmiennej<br>
         index - numer zmiennej w liście<br>
-        name - nazwa zmiennej
+        name - nazwa zmiennej<br>
+        std::vector&#60;VL_variable&#62;* getList() - zwraca wskaźnik do listy<br>
         <hr width="20%" align="left">
         combine(std::vector&#60;VL_variable&#62;* V_list, VL_file* file) - dodaje zmienne ze zmiennej typu VL_file do listy<br>
         V_list - lista zmiennych<br>
-        file - plik
+        file - plik<br>
 
         saveToFile(VL_Handler& file, const std::string& filename, bool clear_file = true) - zapisuje zmienne do pliku<br>
         saveToFile(VL_File& file, const std::string& filename, bool clear_file = true) - zapisuje zmienne do pliku<br>
@@ -73,7 +77,25 @@
         VL_variable* getVariable(int index) - zwraca wskaźnik do zmiennej<br>
 		    VL_variable* getVariable(const std::string& name) - zwraca wskaźnik do zmiennej<br>
         index - numer zmiennej w liście<br>
-        name - nazwa zmiennej
+        name - nazwa zmiennej<br>
+        std::vector&#60;VL_variable&#62;* getList() - zwraca wskaźnik do listy<br>
+        <hr width="20%" align="left">
+        class VL_FileHandler - lista plików<br>
+        VL_FileHandler();
+		    ~VL_FileHandler();
+
+		    void addFile(VL_file& file) - dodaje plik<br>
+        file - plik<br>
+		    void addFile(const std::string& VL_S_Location, const std::string& Name = "") - dodaje plik<br>
+        VL_S_Location - lokalizacja pliku<br>
+        Name - identyfikator pliku (jeśli zostanie "", to identyfikatorem będzie lokalizacja)<br>
+
+		    VL_file* getFile(const std::string& name) - zwraca wskaźnik do pliku<br>
+		    VL_file* getFile(int index) - zwraca wskaźnik do pliku<br>
+        name - nazwa pliku<br>
+        index - numer w liście<br>
+
+		    std::vector&#60;VL_file&#62;* getList() - zwraca listę plików<br>
         <hr width="20%" align="left">
         <h3> Korzystanie z Variable Language </h3>
         <h4> Tworzenie zmiennej</h4>
