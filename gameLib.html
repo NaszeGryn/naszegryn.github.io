@@ -23,7 +23,53 @@
       </div>
 
       <div class="text">
-        <h2> Debug.h </h2>
+        <h2> gameLibrary wymaga SFML </h2>
+        <ul>
+          <li>
+            <a href="#debug"> Debug.h </a>
+          </li>
+          <li>
+            <a href="#math"> namespace Math </a>
+          </li>
+          <li>
+            <a href="#time"> namespace Time </a>
+          </li>
+          <li>
+            <a href="#logic"> namespace Logic </a>
+          </li>
+          <li>
+            <a href="#network"> Network.h </a>
+          </li>
+          <li>
+            <a href="#collisions"> namespace Audio </a>
+          </li>
+          <li>
+            <a href="#collisions"> namespace Collisions </a>
+          </li>
+          <li>
+            <a href="#graphics"> Graphics.h </a>
+          </li>
+          <li>
+            <a href="#draw"> namespace Draw</a>
+          </li>
+          <li>
+            <a href="#graphfunc"> namespace GraphFunc </a>
+          </li>
+          <li>
+            <a href="#processing"> namespace Processing </a>
+          </li>
+          <li>
+            <a href="#particles"> namespace Particles </a>
+          </li>
+          <li>
+            <a href="#gui"> namespace GUI </a>
+          </li>
+          <li>
+            <a href="#ui"> namespace UI </a>
+          </li>
+        </ul>
+        <hr>
+        <h2> <a name="debug" style="font-size: 30px;"> Debug.h </a> </h2>
         <hr width="40%" align="left">
         gL_log(x) - makro, pokazuje tekst i na końcu dodaje nową linie<br>
         showV2f(sf::Vector2f a) - pokazuje sf::Vector2f<br>
@@ -42,7 +88,7 @@
         gL_V2IZERO - makro, punkt (0, 0)<br>
         gL_V2UZERO - makro, punkt (0, 0)<br>
 
-        <h3> namespace Math </h3>
+        <h3> <a name="math">namespace Math</a> </h3>
         float dist(sf::Vector2f a, sf::Vector2f b) - zwraca dystans między dwoma punktami<br>
         a - pierwszy punkt<br>
         b - drugi punkt<br><br>
@@ -148,7 +194,7 @@
         value - wartość, która ma być dodana<br>
         restart - czy ma restartować, jeśli osiągnie maksymalną wartość<br><br>
 
-        <h3> namespace Time </h3>
+        <h3> <a name="time">namespace Time</a> </h3>
         class Clock - zegar (np do liczenia czasu jednej klatki)<br>
         void Update() - aktualizuje deltaTime<br>
 
@@ -162,11 +208,11 @@
         clock - zegar<br>
         restart - czy ma restartować, jeśli osiągnie maksymalną wartość<br><br>
 
-        <h3> namespace Logic </h3>
+        <h3> <a name="logic">namespace Logic</a> </h3>
         bool XOR(bool a, bool b) - bramka XOR<br>
         bool XNOR(bool a, bool b) - bramka XNOR<br>
 
-        <h2> Network.h </h2>
+        <h2> <a name="network" style="font-size: 30px;">Network.h</a> </h2>
         <hr width="40%" align="left">
         gL_IP(a, b, c, d) - tworzy adres IPv4 z podanych wartości<br>
         gL_cIP(str) - tworzy adres IPv4 ze stringa<br>
@@ -174,7 +220,7 @@
         <h2> Audio.h </h2>
         <hr width="40%" align="left">
         <h3> WYMAGA openal32.dll </h3>
-        <h3> namespace Audio </h3>
+        <h3> <a name="audio">namespace Audio</a> </h3>
         sf::SoundBuffer getBuffer(const std::string& location) - ładuje plik audio z pliku<br>
         class Sound - dźwięk (sf::SoundBuffer i sf::Sound w jednym)<br>
         Sound(const std::string& filename, float volume, bool loop) - konstruktor <br>
@@ -196,7 +242,7 @@
 
         <h2> Collisions.h </h2>
         <hr width="40%" align="left">
-        <h3> namespace Collisions </h3>
+        <h3> <a name="collisions">namespace Collisions</a> </h3>
         struct CLine - linia (dwa sf::Vector2f)<br>
         enum class ColliderType - typ collidera<br>
         Poly - poligon<br>
@@ -242,7 +288,7 @@
         a - wskaźnik do pierwszego collidera<br>
         b - wskaźnik do drugiego collidera<br>
 
-        <h2> Graphics.h </h2>
+        <h2> <a name="graphics" style="font-size: 30px;">Graphics.h</a> </h2>
         <hr width="40%" align="left">
         gL_rgb(r, g, b) - makro, tworzy kolor na podstawie danych<br>
         gL_rgba(r, g, b, a) - makro, tworzy kolor na podstawie danych<br>
@@ -251,7 +297,7 @@
 
         <h2> GraphicsClasses.h </h2>
         <hr width="40%" align="left">
-        <h3> namespace Draw </h3>
+        <h3> <a name="draw">namespace Draw</a> </h3>
         class SpriteAnimator - przejmuje kontrole nad animacjami sf::Sprite<br>
         SpriteAnimator(sf::Sprite* sprite, float AnimInterval, sf::Vector2i frameSize, int anim) - konstruktor<br>
         sprite - wskaźnik do sf::Sprite<br>
@@ -308,7 +354,7 @@
 
         <h2> GraphicsFunctions.h </h2>
         <hr width="40%" align="left">
-        <h3> namespace GraphFunc </h3>
+        <h3> <a name="graphfunc">namespace GraphFunc</a> </h3>
         DrawText(sf::Vector2f pos, const std::string& textf, sf::Font* font, unsigned int fontSize, sf::RenderTarget* window) - rysuje tekst na ekranie<br>
         pos - pozycja<br>
         textf - tekst<br>
@@ -360,7 +406,7 @@
 
         <h2> GraphicsProcessing.h </h2>
         <hr width="40%" align="left">
-        <h3> namespace Processing  </h3>
+        <h3> <a name="processing">namespace Processing</a> </h3>
         sf::Texture getNegative(sf::Texture texture) - zwraca teksture w negatywie<br>
         texture - tekstura<br>
         sf::Texture multiply(sf::Texture texture, float val) - mnoży kolory przez wartość <br>
@@ -369,7 +415,7 @@
 
         <h2> Particles.h </h2>
         <hr width="40%" align="left">
-        <h3> namespace Particles  </h3>
+        <h3> <a name="particles">namespace Particles</a>  </h3>
 
         class Particle - cząsteczka<br>
         Particle(float size, sf::Vector2f& move, sf::Vector2f& pos, float alpha_change, sf::Color& color) - konstruktor<br>
@@ -394,7 +440,7 @@
 
         <h2> GUI.h </h2>
         <hr width="40%" align="left">
-        <h3> namespace GUI  </h3>
+        <h3> <a name="gui">namespace GUI</a>  </h3>
         enum class Event - eventy elementów gui<br>
         None - brak eventów<br>
         Clicked - kliknięty<br>
@@ -527,6 +573,27 @@
 
 	      int getIndex(const std::string& ID);
 	      std::string getID(int index);
+
+        <h2> UI.h </h2>
+        <hr width="40%" align="left">
+        <h3> <a name="ui">namespace UI</a>  </h3>
+        gL_isKeyPressed(key) - makro, które sprawdza, czy jest wciśnięty przycisk na klawiaturze<br>
+        gL_getRelativeMousePos(window) - makro, zwraca pozycje myszki względem okna<br><br>
+
+        class File - plik<br>
+        File(const std::string& filename) - konstruktor<br>
+        filename - lokalizacja pliku<br>
+
+        file - zawartość pliku<br><br>
+
+        char keyToChar(sf::Keyboard::Key key) - zamienia przycisk na klawiaturze na char<br>
+        key - przycisk na klawiaturze<br><br>
+
+        char toUpperCase(char a) - działa tak, jak shift<br>
+        a - znak<br><br>
+
+        char getChar() - sprawdza, który przycisk jest przyciśnięty, i jeśli jest wciśnięty SHIFT wywołuje <b>toUpperCase</b><br>
+
 
         <div class="linking">
           <a href="https://www.youtube.com/channel/UCf33DqLlIob7he9bJxsoKzw">
